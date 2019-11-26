@@ -122,3 +122,7 @@ twice :: (a -> a) -> a -> a
 ### 3 Check your answers using GHCi
 
 Done!
+
+
+### 4 Why is it not feasible in general for function types to be instances of the _Eq_ class? When is it feasible? 
+**Hint**: Two functions of the same type are equal if they ALWAYS return equal results for equal arguments.
