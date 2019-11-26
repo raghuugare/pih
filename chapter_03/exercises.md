@@ -57,6 +57,8 @@
 
 ### 2 What are the types of the following functions?
 
+_Hint_: Take care to include the necessary class constraints if the functions are defined using overloaded operators.
+
 ```haskell
 second xs = head (tail xs)
 ```
