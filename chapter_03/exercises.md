@@ -3,12 +3,66 @@
 ## Exercises
 
 
-What are the types of the following values?
+### 1 What are the types of the following values?
 
 ```haskell
 ['a', 'b', 'c']
 ```
 
 ```haskell
-[Char]
+[Char] -- a list of Char's
 ```
+
+---
+
+```haskell
+('a', 'b', 'c')
+```
+
+```haskell
+(Char, Char, Char) -- a tuple of Char's
+```
+
+---
+
+```haskell
+[(False, 'O'), (True '1')]
+```
+
+```haskell
+[(Bool, Char)] -- a list of tuples/pairs of the form (Bool, Char)
+```
+
+---
+
+```haskell
+([False, True], ['0', '1'])
+```
+
+```haskell
+([Bool],[Char]) -- a tuple/pair whose 1st element is a list of Bool's and the 2nd element is a list of Char's
+```
+
+---
+
+```haskell
+[tail, init, reverse]
+```
+
+```haskell
+[[a]->[a]] -- a list of function-types that are of the type [a]->[a] for a type-variable 'a'
+```
+
+---
+
+### 2 What are the types of the following functions?
+
+```haskell
+second xs = head (tail xs)
+```
+
+```haskell
+second :: [a] -> a
+```
+
+
