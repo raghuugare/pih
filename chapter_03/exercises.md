@@ -76,3 +76,43 @@ swap :: (a, b) -> (b, a)
 ```
 
 ---
+
+```haskell
+pair x y = (x, y)
+```
+
+```haskell
+pair :: a b = (a, b)
+```
+
+---
+
+```haskell
+double x = x * 2
+```
+
+```haskell
+double :: Num a => a -> a
+```
+
+---
+
+```haskell 
+palindrome xs = reverse xs == xs
+```
+
+```haskell
+palindrome :: Eq a => [a] -> Bool
+```
+
+---
+
+```haskell
+twice f x = f (f x)
+```
+
+```haskell
+twice :: (a -> a) -> a -> a 
+```
+
+---
