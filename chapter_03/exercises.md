@@ -82,7 +82,7 @@ pair x y = (x, y)
 ```
 
 ```haskell
-pair :: a b = (a, b)
+pair :: a -> b -> (a, b)
 ```
 
 ---
