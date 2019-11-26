@@ -65,4 +65,14 @@ second xs = head (tail xs)
 second :: [a] -> a
 ```
 
+---
 
+```haskell
+swap (x, y) = (y, x)
+```
+
+```haskell
+swap :: (a, b) -> (b, a)
+```
+
+---
