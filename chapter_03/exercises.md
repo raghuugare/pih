@@ -118,3 +118,7 @@ twice :: (a -> a) -> a -> a
 ```
 
 ---
+
+### 3 Check your answers using GHCi
+
+Done!
