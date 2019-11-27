@@ -36,3 +36,31 @@ safetail3 []     = []
 safetail3 (x:xs) = xs
 
 ```
+
+---
+
+3. In a similar way to `&&`, show how the logical disjunction operator `||` can be defined in four different ways using pattern matching.
+
+```haskell
+(||) :: Bool -> Bool -> Bool
+
+
+True  || True  = True
+True  || False = True
+False || True  = True
+False || False = False
+
+
+False || False = False
+_     || _     = True
+
+
+True || _  = True
+_    || a  = a
+
+
+False || a = a
+_     || _ = True
+
+
+```
