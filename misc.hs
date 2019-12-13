@@ -23,21 +23,35 @@ isEven :: Int -> B
 isEven n = if n `mod` 2 == 0 then T else F
 
 
-data Person = P String Int deriving (Show, Read)
+data Name = N String
+
+data Person = P Name Int deriving Show
 
 name :: Person -> String
-name (P n a) = n
+name (P (N n) a) = n
 
 age :: Person -> Int
-age (P n a) = a
+age (P (N n) a) = a
 
+instance Eq Name where
+    N a1 == N a2 = a1 == a2
+
+instance Ord Name where
+    compare (N n1) (N n2) = compare n1 n2
+    (N n1) <= (N n2) = n1 <= n2
+
+instance Show Name where
+    show (N n) = show n
+    
 instance Eq Person where
     (P n1 a1) == (P n2 a2) = n1 == n2
-
+    
 instance Ord Person where
     compare (P n1 a1) (P n2 a2) = compare n1 n2
     (P n1 a1) <= (P n2 a2) = n1 <= n2
 
+
+-- type Name = String
 
 main :: IO()
 main = putStrLn "Hello!"
