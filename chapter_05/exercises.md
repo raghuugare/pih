@@ -37,3 +37,11 @@ Ans. Use a 'filter' after the generators.
 square :: Int -> Int -> [(Int, Int)]
 square n = [(x, y)| x <- [0..n], y <- [0..n], x /= y ]
 ```
+---
+
+4. In a similar way to the function `length` show how the library function `replicate :: Int -> a -> [a]` that produces a list of identical elements be defined using a list comprehension. For example: 
+
+```shell
+> replicate 3 True
+[True, True, True]
+```
