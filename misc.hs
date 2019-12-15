@@ -19,7 +19,7 @@ module Misc where
 
     scalarProduct :: Num a => [a] -> [a] -> a
     scalarProduct xs ys = sum [x*y | (x,y) <- pairs]
-                            where pairs = zip xs ys
+                        where pairs = zip xs ys
 
     -- Type related adventures!
     data B = F | T deriving (Eq, Ord, Show, Read)
@@ -48,11 +48,11 @@ module Misc where
         show (N n) = show n
         
     instance Eq Person where
-        (P n1 a1) == (P n2 a2) = n1 == n2
+        (P n1 _) == (P n2 _) = n1 == n2
         
     instance Ord Person where
-        compare (P n1 a1) (P n2 a2) = compare n1 n2
-        (P n1 a1) <= (P n2 a2) = n1 <= n2
+        compare (P n1 _) (P n2 _) = compare n1 n2
+        (P n1 _) <= (P n2 _) = n1 <= n2
 
     -- type Name = String
 
