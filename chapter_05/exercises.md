@@ -83,7 +83,7 @@ pyths2 n = [(x, y, z)| x <- [1..n]
                      , y <- [x..n]
                      , z <- [y..n]
                      , x*x + y*y == z*z]
--- pyths 6 = [(3, 4, 5)]
+-- pyths2 6 = [(3, 4, 5)]
 
 -- Final improvement! Eliminate redundant triples! Consider relatively prime members only!
 gcd3 :: Integral a => a -> a -> a -> a
