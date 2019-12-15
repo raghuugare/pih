@@ -49,9 +49,14 @@ square n = [(x, y)| x <- [0..n], y <- [0..n], x /= y ]
 Ans.
 
 ```haskell
-replicate :: Int -> a -> [a]
-replicate n v | n == 0 = []
-              | otherwise = v: replicate (n-1) v
+-- Using recursion! Straight-forward using guarded equations or pattern-match...
+replicate1 :: Int -> a -> [a]
+replicate1 n v | n == 0 = []
+               | otherwise = v: replicate1 (n-1) v
+
+-- Using List comprehension!
+replicate2 :: Int -> a -> [a]
+replicate2 n v = [fst (v,y) | y <- take n [1..]]
 ```
 
 5. A 3-tuple of positive integers of the form `(x, y, z)` is _Pythagorean_ if `x^2 + y^2 = z^2`. Using a list comprehension with 3 generators, define a function `pyths :: Int -> [(Int, Int, Int)]` that returns the list of all such triples whose components are at most a given limit. For example:
