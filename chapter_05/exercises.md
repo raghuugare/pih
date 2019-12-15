@@ -30,3 +30,10 @@ grid p q = [(x,y) | x <- [0, p], y <- [0, q]]
 > square 2
 [(0, 1), (0, 2), (1, 0), (1, 2), (2, 0), (2, 1)]
 ```
+
+Ans. 
+
+```haskell
+square :: Int -> Int -> [(Int, Int)]
+square n = [(x, y)| x <- [0..n], y <- [0..n], x /= y ]
+```
