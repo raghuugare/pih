@@ -160,3 +160,19 @@ expr2 = concat [ [(x,y)| x <- [1,2]] | y <-[3,4] ]
 ---
 
 8. Redefine the function `positions` using the function `find`.
+
+Ans.
+
+```haskell
+positions :: Eq a => a -> [a] -> [Int]
+positions x xs = [i | (x', i) <- zip xs [0..], x == x' ]
+```
+
+```haskell
+find :: Eq a => a -> [(a, b)] -> [b]
+find k t = [v| (k', v) <- t, k == k']
+
+positions :: Eq a => a -> [a] -> [Int]
+positions x xs = find a $ zip xs [0..]
+```
+---
