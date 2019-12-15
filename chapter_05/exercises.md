@@ -168,6 +168,8 @@ positions :: Eq a => a -> [a] -> [Int]
 positions x xs = [i | (x', i) <- zip xs [0..], x == x' ]
 ```
 
+The function `find` uses a list comprehension to do a _linear-search_ through an _associative array_. So, we simply use that.
+
 ```haskell
 find :: Eq a => a -> [(a, b)] -> [b]
 find k t = [v| (k', v) <- t, k == k']
