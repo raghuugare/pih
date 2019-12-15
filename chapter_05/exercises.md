@@ -101,3 +101,12 @@ pyths3 n = [(x, y, z)| x <- [1..n]
 -- pyths3 20
 -- [(3,4,5),(5,12,13),(8,15,17)]
 ```
+---
+
+6. A positive integer is _perfect_ if it equals all its factors, excluding the number itself. Using a list comprehension and the function `factors`, define a function `perfects :: Int -> [Int]` that returns the list of all the perfect numbers upto a given limit. For example: 
+
+```shell
+> perfects 500
+[6, 28. 496]
+```
+
