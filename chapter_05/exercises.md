@@ -66,9 +66,33 @@ replicate2 n v = [fst (v,y) | y <- take n [1..]]
 [(3, 4, 5), (4, 3, 5), (6, 8, 10), (8, 6, 10))] 
 ```
 
-Ans. Use 3 generators and a filter. Also try and eliminate duplicates in the generators itself!
+Ans. Use 3 generators and a filter.
 
 ```haskell
-pyths :: Int -> [(Int, Int, Int)]
-pyths n = [(x, y, z)| x <- [1..n], y <- [x..n], z <- [y..n], x*x + y*y == z*z]
+-- Simple solution!
+pyths1 :: Int -> [(Int, Int, Int)]
+pyths1 n = [(x, y, z)| x <- [1..n]
+                     , y <- [1..n]
+                     , z <- [1..n]
+                     , x*x + y*y == z*z]
+
+-- pyths 6 = [(3, 4, 5), (4, 3, 5)]
+
+-- Also try and eliminate duplicates in the generators itself!
+pyths2 n = [(x, y, z)| x <- [1..n]
+                     , y <- [x..n]
+                     , z <- [y..n]
+                     , x*x + y*y == z*z]
+-- pyths 6 = [(3, 4, 5)]
+
+-- Final improvement! Eliminate redundant triples! Consider relatively prime members only!
+gcd3 :: Integral a => a -> a -> a -> a
+gcd3 = gcd a $ gcd b c
+
+-- check if gcd of the tuple members == 1. (Relatively prime!)
+pyths3 n = [(x, y, z)| x <- [1..n]
+                     , y <- [1..n]
+                     , z <- [1..n]
+                     , x*x + y*y == z*z
+                     , gcd3 x y z == 1] 
 ```
