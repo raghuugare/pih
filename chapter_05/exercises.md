@@ -39,9 +39,24 @@ square n = [(x, y)| x <- [0..n], y <- [0..n], x /= y ]
 ```
 ---
 
-4. In a similar way to the function `length` show how the library function `replicate :: Int -> a -> [a]` that produces a list of identical elements be defined using a list comprehension. For example: 
+4. In a similar way to the function `length` show how the library function `replicate :: Int -> a -> [a]` that produces a list of identical elements can be defined using a list comprehension. For example: 
 
 ```shell
 > replicate 3 True
 [True, True, True]
+```
+
+Ans.
+
+```haskell
+replicate :: Int -> a -> [a]
+replicate n v | n == 0 = []
+              | otherwise = v: replicate (n-1) v
+```
+
+5. A 3-tuple of positive integers of the form `(x, y, z)` is _Pythagorean_ if `x^2 + y^2 = z^2`. Using a list comprehension with 3 generators, define a function `pyths :: Int -> [(Int, Int, Int)]` that returns the list of all such triples whose components are at most a given limit. For example:
+
+```shell
+> pyths 10 
+[(3, 4, 5), (4, 3, 5), (6, 8, 10), (8, 6, 10))] 
 ```
