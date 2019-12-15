@@ -178,3 +178,11 @@ positions :: Eq a => a -> [a] -> [Int]
 positions x xs = find a $ zip xs [0..]
 ```
 ---
+
+9. The _scalar product_ of 2 lists `xs` and `ys` of the same length `n` is given by the sum of the products of the corresponding elements of the 2 lists. Show how a list comprehension can be used to define a function `scalarProduct :: [Int] -> [Int] -> Int` that returns the scalar products of 2 lists. For example:
+
+```shell
+> scalarProduct [1,2,3] [4,5,6]
+32
+```
+
