@@ -139,3 +139,21 @@ primes n = [x| x <- [1..n], factors x == [1, x]]
 ```
 
 ---
+
+7. Show how the list comprehension `[(x,y)| x <- [1,2], y <- [3,4]]` with 2 generators can be expressed as 2 list comprehensions with 1 generator each. **Hint** : nest one comprehension within the other & use the library function `concat :: [[a]] -> [a]`
+
+Ans.
+
+```haskell
+expr1 :: [(Int, Int)]
+expr1 = [(x,y)| x <- [1,2], y <- [3,4]]
+-- [(1,3),(1,4),(2,3),(2,4)]
+```
+
+Note the difference in order!! :-) 
+
+```haskell
+expr2 :: [(Int, Int)]
+expr2 = concat [ [(x,y)| x <- [1,2]] | y <-[3,4] ] 
+-- [(1,3),(2,3),(1,4),(2,4)]
+```
