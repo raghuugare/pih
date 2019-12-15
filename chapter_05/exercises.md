@@ -157,3 +157,6 @@ expr2 :: [(Int, Int)]
 expr2 = concat [ [(x,y)| x <- [1,2]] | y <-[3,4] ] 
 -- [(1,3),(2,3),(1,4),(2,4)]
 ```
+---
+
+8. Redefine the function `positions` using the function `find`.
