@@ -76,14 +76,16 @@ pyths1 n = [(x, y, z)| x <- [1..n]
                      , z <- [1..n]
                      , x*x + y*y == z*z]
 
--- pyths 6 = [(3, 4, 5), (4, 3, 5)]
+-- pyths 6 
+-- [(3, 4, 5), (4, 3, 5)]
 
 -- Also try and eliminate duplicates in the generators itself!
 pyths2 n = [(x, y, z)| x <- [1..n]
                      , y <- [x..n]
                      , z <- [y..n]
                      , x*x + y*y == z*z]
--- pyths2 6 = [(3, 4, 5)]
+-- pyths2 6 
+-- [(3, 4, 5)]
 
 -- Final improvement! Eliminate redundant triples! Consider relatively prime members only!
 gcd3 :: Integral a => a -> a -> a -> a
@@ -95,4 +97,7 @@ pyths3 n = [(x, y, z)| x <- [1..n]
                      , z <- [1..n]
                      , x*x + y*y == z*z
                      , gcd3 x y z == 1] 
+-- Now,
+-- pyths3 20
+-- [(3,4,5),(5,12,13),(8,15,17)]
 ```
