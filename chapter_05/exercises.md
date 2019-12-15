@@ -31,7 +31,7 @@ grid p q = [(x,y) | x <- [0, p], y <- [0, q]]
 [(0, 1), (0, 2), (1, 0), (1, 2), (2, 0), (2, 1)]
 ```
 
-Ans. 
+Ans. Use a 'filter' after the generators.
 
 ```haskell
 square :: Int -> Int -> [(Int, Int)]
