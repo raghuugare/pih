@@ -186,3 +186,10 @@ positions x xs = find a $ zip xs [0..]
 32
 ```
 
+Ans. Use the `zip` function !! :-) 
+
+```haskell
+scalarProduct :: Num a => [a] -> [a] -> a
+scalarProduct xs ys = sum [x*y| (x,y) <- zip xs ys]
+```
+
