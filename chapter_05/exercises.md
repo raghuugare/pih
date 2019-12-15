@@ -78,20 +78,30 @@ pyths1 n = [(x, y, z)| x <- [1..n]
 
 -- pyths 6 
 -- [(3, 4, 5), (4, 3, 5)]
+```
 
--- Also try and eliminate duplicates in the generators itself!
+Also try and eliminate duplicates in the generators itself!
+
+```haskell
+pyths2 :: Int -> [(Int, Int, Int)]
 pyths2 n = [(x, y, z)| x <- [1..n]
                      , y <- [x..n]
                      , z <- [y..n]
                      , x*x + y*y == z*z]
 -- pyths2 6 
 -- [(3, 4, 5)]
+```
 
--- Final improvement! Eliminate redundant triples! Consider relatively prime members only!
+
+Final improvement! Eliminate redundant triples! Consider relatively prime members only!
+```haskell
 gcd3 :: Integral a => a -> a -> a -> a
 gcd3 = gcd a $ gcd b c
 
 -- check if gcd of the tuple members == 1. (Relatively prime!)
+
+```haskell
+pyths3 :: Int -> [(Int, Int, Int)]
 pyths3 n = [(x, y, z)| x <- [1..n]
                      , y <- [1..n]
                      , z <- [1..n]
