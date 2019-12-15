@@ -60,3 +60,10 @@ replicate n v | n == 0 = []
 > pyths 10 
 [(3, 4, 5), (4, 3, 5), (6, 8, 10), (8, 6, 10))] 
 ```
+
+Ans. Use 3 generators and a filter. Also try and eliminate duplicates in the generators itself!
+
+```haskell
+pyths :: Int -> [(Int, Int, Int)]
+pyths n = [(x, y, z)| x <- [1..n], y <- [x..n], z <- [y..n], x*x + y*y == z*z]
+```
