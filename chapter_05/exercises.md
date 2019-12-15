@@ -192,4 +192,6 @@ Ans. Use the `zip` function !! :-)
 scalarProduct :: Num a => [a] -> [a] -> a
 scalarProduct xs ys = sum [x*y| (x,y) <- zip xs ys]
 ```
+---
 
+10. Modify the Caesar cipher program to also handle upper-case characters.
