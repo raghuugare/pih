@@ -58,6 +58,7 @@ replicate1 n v | n == 0 = []
 replicate2 :: Int -> a -> [a]
 replicate2 n v = [fst (v,y) | y <- take n [1..]]
 ```
+---
 
 5. A 3-tuple of positive integers of the form `(x, y, z)` is _Pythagorean_ if `x^2 + y^2 = z^2`. Using a list comprehension with 3 generators, define a function `pyths :: Int -> [(Int, Int, Int)]` that returns the list of all such triples whose components are at most a given limit. For example:
 
@@ -92,7 +93,6 @@ pyths2 n = [(x, y, z)| x <- [1..n]
 -- [(3, 4, 5)]
 ```
 
-
 Final improvement! Eliminate redundant triples! Consider relatively prime members only!
 ```haskell
 gcd3 :: Integral a => a -> a -> a -> a
@@ -111,6 +111,7 @@ pyths3 n = [(x, y, z)| x <- [1..n]
 -- pyths3 20
 -- [(3,4,5),(5,12,13),(8,15,17)]
 ```
+
 ---
 
 6. A positive integer is _perfect_ if it equals all its factors, excluding the number itself. Using a list comprehension and the function `factors`, define a function `perfects :: Int -> [Int]` that returns the list of all the perfect numbers upto a given limit. For example: 
@@ -136,3 +137,5 @@ perfects n = [x| x <- [1..n], sum (factors x) == 2*x]
 primes :: Int -> [Int]
 primes n = [x| x <- [1..n], factors x == [1, x]]
 ```
+
+---
