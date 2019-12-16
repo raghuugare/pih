@@ -56,7 +56,13 @@ replicate1 n v | n == 0 = []
 
 -- Using List comprehension!
 replicate2 :: Int -> a -> [a]
-replicate2 n v = [fst (v,y) | y <- take n [1..]]
+replicate2 n v = [fst (v,y) | y <- [1..n]]
+```
+
+```haskell
+-- Simplest way ! Thanks to Akib! :-) 
+replicate3 :: Int -> a -> [a]
+replicate3 n v = [v | _ <- [1..n]]
 ```
 ---
 
