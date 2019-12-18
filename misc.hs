@@ -54,7 +54,40 @@ instance Ord Person where
     compare (P n1 _) (P n2 _) = compare n1 n2
     (P n1 _) <= (P n2 _) = n1 <= n2
 
+data List a = Nil | Cons a (List a)
+
+len :: List a -> Int
+len (Nil) = 0
+len (Cons _ l) = 1 + len l
+
+instance Functor List where
+    fmap f Nil = Nil 
+    fmap f (Cons x l) = Cons (f x) (fmap f l)
+
+{-    
+instance Show a => Show (List a) where
+    show Nil = []::String
+    show (Cons x Nil) =  show x ++ "]"
+    show (Cons x l) =  "[" ++ show x ++ ", " ++ show l
+-}
+
+{-
+instance Show a => Show (List a) where
+    show l = "[" ++ myshow l ++ "]" where
+        myshow Nil = []::String
+        myshow (Cons x Nil) =  show x
+        myshow (Cons x l) =  show x ++ ", " ++ myshow l
+-}    
 -- type Name = String
+
+
+data Move = U | D | L | R deriving (Show, Read, Eq, Ord)
+
+rev :: Move -> Move
+rev U = D
+rev D = U
+rev L = R
+rev R = L
 
 main :: IO()
 main = do
